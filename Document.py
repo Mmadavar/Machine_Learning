@@ -20,7 +20,7 @@ df = df[['Adj. Close', "HL_PCT","PCT_change","Adj. Volume"]]
 forecast_col = "Adj. Close"
 df.fillna(99999999, inplace=True)
 
-forecast_out = int(Math.ceil(0.01* len(df)))
+forecast_out = int(math.ceil(0.01* len(df)))
 print(forecast_out)
 
 df['label'] = df[forecast_col].shift(-forecast_out)
@@ -50,7 +50,7 @@ print(forecast_set, accuracy, forecast_out)
 df['Forecast'] = np.nan
 
 
-last_date = dr.iloc[-1] #last date
+last_date = df.iloc[-1] #last date
 last_unix = last_date.timestamp()
 one_day = 60 * 60 * 24
 
@@ -70,3 +70,6 @@ plt.legend(loc=4)
 plt.xlabel('Date')
 plt.ylabel('price')
 plt.show()
+
+
+print("yes")
